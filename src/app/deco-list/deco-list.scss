@@ -1,0 +1,42 @@
+table {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+thead th {
+  background-color: #f5f2ee;
+  color: #6c5b4c;
+}
+
+.img-thumbnail {
+  object-fit: cover;
+  height: 80px;
+  width: 80px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #5f4b32; // tono tierra
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.card-header {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-body {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.oferta {
+  border: 2px solid green;
+}
