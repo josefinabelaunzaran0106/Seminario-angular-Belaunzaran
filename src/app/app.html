@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">
-      <i class="bi bi-house-door-fill me-2"></i>{{title}}
+      <i class="bi bi-house-door-fill me-2"></i>{{ title }}
     </a>
     <button
       class="navbar-toggler"
@@ -18,22 +18,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a [routerLink]="['/']" class="nav-link active" aria-current="page">
             <i class="bi bi-house-door me-1"></i>Inicio
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-box-seam me-1"></i>Productos
+          <a [routerLink]="['/about']" class="nav-link">
+            <i class="bi bi-box-seam me-1"></i>Sobre nosotros
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-tags me-1"></i>Ofertas
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a [routerLink]="['/contacto']" class="nav-link">
             <i class="bi bi-envelope me-1"></i>Contacto
           </a>
         </li>
@@ -41,28 +36,11 @@
     </div>
   </div>
 </nav>
-<div class="container my-5">
-  <div class="row">
-    <!-- Listado de productos -->
-    <div class="col-lg-8 mb-4">
-      <h2 class="mb-4 text-decoration-underline text-uppercase text-secondary">Nuestros Productos</h2>
-      <app-deco-list></app-deco-list>
-    </div>
 
-    <!-- Carrito de compras -->
-    <div class="col-lg-4">
-      <div class="card shadow-sm border-0">
-        <div class="card-header bg-light">
-          <h4 class="mb-0 text-dark text-center">🛒 Carrito de Compras</h4>
-        </div>
-        <div class="card-body">
-          <p class="text-muted text-center">Tu carrito está vacío</p>
-          <!-- Aquí podrías renderizar el listado de ítems -->
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
+
 <footer class="bg-dark text-light text-center py-4 mt-5">
   <div class="container">
     <p class="mb-1 fw-bold">{{title}} &copy; 2025</p>

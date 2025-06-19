@@ -6,12 +6,16 @@ import { App } from './app';
 import { DecoList } from './deco-list/deco-list';
 import { CarritoCompras } from './carrito-compras/carrito-compras';
 import { FormsModule } from '@angular/forms';
+import { DecoAbout } from './deco-about/deco-about';
+import { DecoTiendaDeco } from './deco-tienda-deco/deco-tienda-deco';
 
 @NgModule({
   declarations: [
     App,
     DecoList,
-    CarritoCompras
+    CarritoCompras,
+    DecoAbout,
+    DecoTiendaDeco
   ],
   imports: [
     BrowserModule,
