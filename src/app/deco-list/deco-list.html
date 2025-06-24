@@ -30,39 +30,7 @@
           }
         </td>
        <td>
-          <div class="d-flex flex-column align-items-start gap-2">
-            <div class="d-flex align-items-center gap-2">
-              <button
-                class="btn btn-outline-danger btn-sm"
-                (click)="downQuantity(item)"
-                [disabled]="item.cantidad <= 0"
-              >
-                -
-              </button>
-
-              <input
-                type="number"
-                min="0"
-                [(ngModel)]="item.cantidad"
-                (change)="validateQuantity(item, $event)"
-                class="form-control form-control-sm text-center"
-                style="width: 60px;"
-              />
-
-              <button
-                class="btn btn-outline-success btn-sm"
-                (click)="upQuantity(item)"
-                [disabled]="item.stock === 0"
-              >
-                +
-              </button>
-            </div>
-
-            <!-- Usar *ngIf en lugar de @if -->
-            <div *ngIf="item.showStockError" class="text-danger small ms-1">
-              Cantidad no disponible (Stock: {{ item.stock }})
-            </div>
-          </div>
+          <app-input-numero [cantidad]="item.cantidad" [max]="item.stock" *ngIf="item.stock"></app-input-numero>
         </td>
 
 

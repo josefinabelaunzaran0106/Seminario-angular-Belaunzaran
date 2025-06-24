@@ -191,26 +191,5 @@ export class DecoList {
     }
   ];
 
-upQuantity (deco: Deco): void{
-  if(deco.cantidad < deco.stock)
-  deco.cantidad++;
-}
-downQuantity (deco: Deco): void{
-  if(deco.cantidad>0)
-  deco.cantidad--;
-}
-
-validateQuantity(item: any, event: Event): void {
-  const input = event.target as HTMLInputElement;
-  const value = Number(input.value);
-
-  if (value > item.stock) {
-    item.showStockError = true;
-    item.cantidad = item.stock;
-  } else {
-    item.showStockError = false;
-  }
-}
-
 }
 
