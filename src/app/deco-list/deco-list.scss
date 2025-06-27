@@ -1,42 +1,103 @@
-table {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  border-radius: 0.5rem;
+.card-producto {
+  position: relative;
   overflow: hidden;
-}
-
-thead th {
-  background-color: #f5f2ee;
-  color: #6c5b4c;
-}
-
-.img-thumbnail {
-  object-fit: cover;
-  height: 80px;
-  width: 80px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: #5f4b32; // tono tierra
-}
-
-.card {
-  border-radius: 1rem;
-}
-
-.card-header {
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.card-body {
-  min-height: 200px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Destacar productos en oferta con borde naranja y sombra */
+  border: 2px solid transparent;
 }
-.oferta {
-  border: 2px solid green;
+
+.card-producto.oferta-hover {
+  border-color: #ff4500; /* naranja */
+  box-shadow: 0 0 12px rgba(255, 69, 0, 0.6);
+}
+
+.card-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Imagen: misma altura y ancho 100%, con recorte */
+.imagen-producto {
+  width: 200px;
+  height: 200px;  /* fijo para todas */
+  object-fit: cover;
+  border-radius: 0.375rem 0.375rem 0 0; /* redondeo arriba */
+  transition: transform 0.3s ease;
+}
+.imagen-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem; /* opcional, para separarla del borde superior */
+}
+
+.card-producto:hover .imagen-producto {
+  transform: scale(1.05);
+}
+
+/* Cartel en oferta centrado y solo visible en hover */
+.overlay-oferta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 69, 0, 0.85);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  text-align: center;
+}
+
+.card-producto.oferta-hover:hover .overlay-oferta {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Cuerpo de la card centrado vertical y horizontal */
+.card-body {
+  padding: 1rem 1.25rem;
+  flex: 1; /* para que ocupe el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  text-align: center;      /* alinea texto al centro */
+}
+
+/* Ajustes para el input y botón en una fila con espacio */
+.mt-auto {
+  width: 100%;
+}
+
+.mt-auto > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Input tamaño fijo */
+.cantidad-compra app-input-numero {
+  width: 60px; 
+}
+
+/* Botón comprar - hover mejorado */
+.btn-success {
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-success:hover {
+  background-color: #28a745cc; /* verde ligeramente más oscuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }

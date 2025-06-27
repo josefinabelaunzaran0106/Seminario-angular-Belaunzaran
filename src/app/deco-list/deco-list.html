@@ -1,51 +1,45 @@
-<div class="table-responsive shadow-sm rounded">
-<table class="table align-middle table-hover">
-  <thead class="table-light">
-    <tr class="text-uppercase text-secondary">
-      <th>Imagen</th>
-      <th>Nombre</th>
-      <th>Categoría</th>
-      <th>Precio</th>
-      <th>Stock</th>
-      <th>Cantidad</th>
-      <th>Compra</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (item of deco; track item.nombre) {
-      <tr [ngClass]="{ 'oferta': item.oferta }">
-        <td>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  @for (item of deco; track item.nombre) {
+    <div class="col">
+      <div
+        class="card h-100 shadow-sm border-0 position-relative card-producto"
+        [ngClass]="{ 'oferta-hover': item.oferta }"
+      >
+        <div class="imagen-wrapper position-relative">
           <img
             [src]="item.imagen"
-            alt="{{ item.nombre }}"
-            class="img-thumbnail rounded shadow-sm"
-            width="100"
+            [alt]="item.nombre"
+            class="card-img-top imagen-producto"
           />
-        </td>
-        <td class="fw-semibold">{{ item.nombre }}</td>
-        <td>{{ item.categoria }}</td>
-        <td class="text-success fw-bold">{{ item.precio | currency }}</td>
-        <td>
-          @if (item.stock === 0) {
-            <span class="badge text-bg-warning">Sin stock</span>
-          }
-        </td>
-       <td>
-          <app-input-numero [(cantidad)]="item.cantidad" [max]="item.stock" *ngIf="item.stock"></app-input-numero>
-       </td>
-       <td>
-          <button
-            class="btn btn-success btn-sm"
-            *ngIf="item.stock > 0"
-            (click)="agregarAlCarrito(item)"
-          >
-            Comprar
-          </button>
-        </td>
-      </tr>
-    }
-  </tbody>
-</table>
 
+          <!-- Cartel de oferta en el centro al hacer hover -->
+          <div *ngIf="item.oferta" class="overlay-oferta">
+            ¡En oferta!
+          </div>
+        </div>
+
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold">{{ item.nombre }}</h5>
+          <p class="card-text mb-1 text-muted">{{ item.categoria }}</p>
+          <p class="card-text text-success fw-bold">{{ item.precio | currency }}</p>
+
+          <div class="mt-auto">
+            <div *ngIf="item.stock > 0; else sinStock">
+              <app-input-numero [(cantidad)]="item.cantidad" [max]="item.stock"></app-input-numero>
+              <button
+                class="btn btn-success btn-sm w-100 mt-2"
+                (click)="agregarAlCarrito(item)"
+                [disabled]="item.cantidad === 0"
+              >
+                Comprar
+              </button>
+            </div>
+            <ng-template #sinStock>
+              <span class="badge bg-warning text-dark">Sin stock</span>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
 </div>
-

@@ -1,0 +1,17 @@
+.navbar-nav .nav-item {
+  margin-left: 1rem;
+}
+
+.navbar-nav .nav-item:first-child {
+  margin-left: 0;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #ffc107;
+}
+
+.navbar-nav .nav-link.active:hover {
+  color: #e0a800 !important;
+}

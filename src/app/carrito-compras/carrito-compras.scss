@@ -1,0 +1,53 @@
+.carrito-estilo {
+  background: #ffffff;
+  border: 2px solid #f1f1f1;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.carrito-estilo:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.carrito-estilo ul {
+  margin-bottom: 1rem;
+}
+
+.carrito-estilo .list-group-item {
+  border: none;
+  background-color: transparent;
+}
+
+.btn-vaciar {
+  transition: all 0.3s ease;
+}
+
+.btn-vaciar:hover {
+  background-color: #dc3545;
+  color: white;
+}
+.carrito-card {
+  transition: box-shadow 0.3s ease;
+  border-radius: 1rem;
+}
+
+.carrito-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carrito-header {
+  background: linear-gradient(to right, #f9f9f9, #f1f1f1);
+  border-bottom: 2px solid #e0e0e0;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+.carrito-header h4 {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: #343a40;
+}
+

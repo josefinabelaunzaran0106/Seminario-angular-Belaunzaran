@@ -1,21 +1,27 @@
 <div class="container my-5">
-  <div class="row">
+  <div class="row gx-5">
+    
     <!-- Listado de productos -->
     <div class="col-lg-9 mb-4">
-      <h2 class="mb-4 text-decoration-underline text-uppercase text-secondary">Nuestros Productos</h2>
+      <h2 class="mb-4 text-uppercase text-primary fw-bold seccion-titulo">
+        <i class="bi bi-stars me-2"></i> Nuestros Productos
+      </h2>
       <app-deco-list></app-deco-list>
     </div>
 
-    <!-- Carrito de compras -->
-    <div class="col-lg-3">
-      <div class="card shadow-sm border-0">
-        <div class="card-header bg-light">
-          <h4 class="mb-0 text-dark text-center">🛒 Carrito de Compras</h4>
+    <!-- Carrito de compras sin sticky, con estilos propios -->
+    <div class="col-lg-3 d-flex justify-content-end">
+      <div class="carrito-estilo carrito-card w-100 w-md-75 w-lg-100">
+        <div class="carrito-header text-center p-3">
+          <h4 class="mb-0 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2 text-dark">
+            <span class="fs-5">🛒</span> Carrito de Compras
+          </h4>
         </div>
-        <div class="card-body">
+        <div class="card-body p-4">
           <app-carrito-compras></app-carrito-compras>
         </div>
       </div>
     </div>
+
   </div>
 </div>
