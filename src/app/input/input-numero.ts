@@ -54,7 +54,7 @@ export class InputNumero {
 
   private setStockError(value: boolean): void {
     this.showStockError = value;
-    this.stockErrorChange.emit(value); // Emitís el estado hacia el componente padre
+    this.stockErrorChange.emit(value); 
   }
 }
 
