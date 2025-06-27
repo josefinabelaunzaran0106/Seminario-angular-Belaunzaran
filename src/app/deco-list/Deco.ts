@@ -8,3 +8,4 @@ export interface Deco {
       cantidad: number;
       showStockError?: boolean;
     }
+    
