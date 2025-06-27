@@ -7,6 +7,7 @@
       <th>Categoría</th>
       <th>Precio</th>
       <th>Stock</th>
+      <th>Cantidad</th>
       <th>Compra</th>
     </tr>
   </thead>
@@ -30,11 +31,17 @@
           }
         </td>
        <td>
-          <app-input-numero [cantidad]="item.cantidad" [max]="item.stock" *ngIf="item.stock"></app-input-numero>
+          <app-input-numero [(cantidad)]="item.cantidad" [max]="item.stock" *ngIf="item.stock"></app-input-numero>
+       </td>
+       <td>
+          <button
+            class="btn btn-success btn-sm"
+            *ngIf="item.stock > 0"
+            (click)="agregarAlCarrito(item)"
+          >
+            Comprar
+          </button>
         </td>
-
-
-
       </tr>
     }
   </tbody>
