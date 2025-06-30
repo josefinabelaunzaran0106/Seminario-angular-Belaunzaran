@@ -22,8 +22,6 @@ export class DecoList {
 
  agregarAlCarrito(item: Deco): void {
     this.decoCarrito.agregarAlCarrito(item);
-    item.stock -=item.cantidad;
-    item.cantidad=0;
   }
 
 
